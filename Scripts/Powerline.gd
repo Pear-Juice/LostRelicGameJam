@@ -9,6 +9,7 @@ var attachmentPos: Vector2
 
 func _ready():
 	set_as_toplevel(true)
+	set_attachment_node(get_parent())
 	add_point(initialPoint)
 
 func _process(delta):
