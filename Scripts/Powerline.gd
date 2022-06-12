@@ -5,7 +5,7 @@ export var distanceToDelete: float
 var deleteSecondLastPoint: bool
 
 var attachmentNode: Node2D
-var attachmentPos: Vector2
+"res://Scenes/Starting Area.tscn"var attachmentPos: Vector2
 
 func _ready():
 	set_as_toplevel(true)
