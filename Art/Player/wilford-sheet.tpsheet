@@ -1,0 +1,198 @@
+{
+	"textures": [
+		{
+			"image": "wilford-sheet.png",
+			"size": {
+				"w": 64,
+				"h": 48
+			},
+			"sprites": [
+				{
+					"filename": "wilford-d0.png",
+					"region": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-d1.png",
+					"region": {
+						"x": 0,
+						"y": 16,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-d2.png",
+					"region": {
+						"x": 0,
+						"y": 32,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-l0.png",
+					"region": {
+						"x": 16,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-l1.png",
+					"region": {
+						"x": 16,
+						"y": 16,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-l2.png",
+					"region": {
+						"x": 16,
+						"y": 32,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-r0.png",
+					"region": {
+						"x": 32,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-r1.png",
+					"region": {
+						"x": 32,
+						"y": 16,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-r2.png",
+					"region": {
+						"x": 32,
+						"y": 32,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-u0.png",
+					"region": {
+						"x": 48,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-u1.png",
+					"region": {
+						"x": 48,
+						"y": 16,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "wilford-u2.png",
+					"region": {
+						"x": 48,
+						"y": 32,
+						"w": 16,
+						"h": 16
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7",
+		"format": "RGBA8888",
+	}
+}

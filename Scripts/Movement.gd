@@ -1,4 +1,5 @@
 extends KinematicBody2D
+onready var _animator = $AnimatedSprite
 
 export (int) var speed = 200
 
@@ -21,3 +22,18 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	
+	# animation
+	var a_table = [["walk-l", "idle-l"], ["walk-r", "idle-r"], ["walk-u", "idle-u"], ["walk-d", "idle-d"]]
+	if (velocity == Vector2()):
+		for a in a_table:
+			if (_animator.animation == a[0]):
+				_animator.animation = a[1]
+	elif (velocity.y < 0):
+		_animator.animation = "walk-u"
+	elif (velocity.y > 0):
+		_animator.animation = "walk-d"
+	elif (velocity.x > 0):
+		_animator.animation = "walk-r"
+	elif (velocity.x < 0):
+		_animator.animation = "walk-l"
