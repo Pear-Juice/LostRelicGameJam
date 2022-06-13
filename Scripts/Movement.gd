@@ -22,6 +22,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	print(velocity)
 	velocity = _kinematicBody.move_and_slide(velocity)
 	animate()
 
