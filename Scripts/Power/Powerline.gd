@@ -1,14 +1,15 @@
 extends Line2D
+onready var player = get_node("/root/PlayerVariables")
 
 export var distanceToDelete: float
 var deleteSecondLastPoint: bool
 
 var attachmentNode: Node2D
 var attachmentPos: Vector2
-
 var generatorPos: Vector2
 
 var isGenerating: bool
+var attachedToPlayer: bool
 
 func _ready():
 	set_as_toplevel(true)
@@ -30,7 +31,6 @@ func _process(delta):
 	if (!attachmentNode || !isGenerating):
 		return
 		
-	print(get_point_count())
 	if get_point_count() == 0 || get_point_count() == 1:
 		if get_point_count() == 1:
 			delete_point_recursive(0)
@@ -39,9 +39,14 @@ func _process(delta):
 		place_point()
 		return
 		
+	check_attached_to_player()
 	attachmentPos = get_attachment_position()
 	
-	if attachmentNode.name == "Player" and Input.is_action_just_pressed("add_point"):
+	player.powerline = self
+	
+	print(attachedToPlayer)
+	
+	if attachedToPlayer and Input.is_action_just_pressed("add_point"):
 		deleteSecondLastPoint = false
 		place_point()
 		
@@ -68,11 +73,15 @@ func check_point_deletion():
 # warning-ignore:unassigned_variable_op_assign
 		index += 1
 
+func check_attached_to_player():
+	if attachmentNode == player.node:
+		attachedToPlayer = true
+	else:
+		attachedToPlayer = false
+
 func delete_point_recursive(index):
 	for _i in range(index, points.size() - 1):
 		remove_point(index)
-
-
 
 func get_attachment_position() -> Vector2:
 	return attachmentNode.global_position

@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Art/Player/player-sheet.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/Movement.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Interaction.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -14,6 +16,7 @@ scale = Vector2( 0.6, 0.8 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
 [node name="Interaction" type="Node2D" parent="."]
 script = ExtResource( 4 )

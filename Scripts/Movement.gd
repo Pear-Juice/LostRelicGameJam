@@ -32,6 +32,10 @@ func animate():
 		for a in a_table:
 			if (_animator.animation == a[0]):
 				_animator.animation = a[1]
+				
+	if (velocity.x != 0 && velocity.y != 0):
+		return
+	
 	elif (velocity.y < 0):
 		_animator.animation = "walk-u"
 	elif (velocity.y > 0):
