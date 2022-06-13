@@ -44,8 +44,6 @@ func _process(delta):
 	
 	player.powerline = self
 	
-	print(attachedToPlayer)
-	
 	if attachedToPlayer and Input.is_action_just_pressed("add_point"):
 		deleteSecondLastPoint = false
 		place_point()
