@@ -31,4 +31,4 @@ func check_call_interactor(interactor):
 		return
 	
 	if Input.is_action_just_pressed("interact"):
-		interactor.interact()
+		interactor.interact(get_parent())

@@ -6,7 +6,7 @@ var interactable: bool
 func _ready():
 	add_to_group("Interactors")
 	
-func interact():
-	print("Interacted with: " + self.name)
-	emit_signal("interact")
+func interact(player):
+	print("Interacted with: " + get_parent().name)
+	emit_signal("interact", player)
 	

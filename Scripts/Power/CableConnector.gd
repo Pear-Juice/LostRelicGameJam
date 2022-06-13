@@ -10,7 +10,7 @@ func _process(delta):
 	else:
 		animatedSprite.frame = 0
 		
-func _on_interact():
+func _on_interact(player):
 	if !connected:
 		connected = true
 	else:
