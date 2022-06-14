@@ -1,6 +1,7 @@
 extends Line2D
 onready var player = get_node("/root/PlayerVariables")
-onready var generator = get_parent()
+export var generationPoitionNodePath: NodePath
+onready var generationPositionNode = get_node(generationPoitionNodePath) as Node2D
 
 export var distanceToDelete: float
 var deleteSecondLastPoint: bool
@@ -10,30 +11,50 @@ var attachmentPos: Vector2
 var generatorPos: Vector2
 
 var attachedToPlayer: bool
+var isGenerating: bool
+var electrified: bool
 
 func _ready():
 	set_as_toplevel(true)
+	self.visible = false
+	
+func _on_interact():
+	if !isGenerating && player.powerline == null:
+		isGenerating = true
+		start_generation(player.node)
+	elif isGenerating:
+		isGenerating = false
+		stop_generation()
+	
+func _process(_delta):
+	update_generation()
 
-func start_generation(generatePos: Vector2, attachNode = null):
+func start_generation(attachNode):
 	delete_point_recursive(0)
-	self.generatorPos = generatePos
 	attachmentNode = attachNode
+	isGenerating = true
+	generatorPos = get_generation_position()
+	
+	yield(get_tree().create_timer(0.05), "timeout")
+	self.visible = true
 
 func stop_generation():
+	self.visible = false
 	delete_point_recursive(0)
 	attachmentNode = null
 	deleteSecondLastPoint = false
+	isGenerating = false
 	player.powerline = null
 
-# warning-ignore:unused_argument
-func _process(delta):
-	if (!attachmentNode || !generator.isGenerating):
+func update_generation():
+	if (!attachmentNode || !isGenerating):
 		return
 		
 	if get_point_count() == 0 || get_point_count() == 1:
 		if get_point_count() == 1:
 			delete_point_recursive(0)
 		
+		generatorPos = get_generation_position()
 		add_point(generatorPos)
 		place_point()
 		return
@@ -52,7 +73,6 @@ func _process(delta):
 		points[points.size() - 1] = attachmentPos
 		check_point_deletion()
 		
-		
 func place_point():
 	add_point(attachmentPos)
 	
@@ -63,7 +83,7 @@ func check_point_deletion():
 	
 	var index: int
 	for point in points:
-		if point.distance_to(attachmentPos) < distanceToDelete && point != points[points.size() - 1]:
+		if point.distance_to(attachmentPos) < distanceToDelete && points.size() > 0 && point != points[points.size() - 1]:
 			if deleteSecondLastPoint:
 				delete_point_recursive(index)
 			elif point != points[points.size() - 2]:
@@ -83,3 +103,7 @@ func delete_point_recursive(index):
 
 func get_attachment_position() -> Vector2:
 	return attachmentNode.global_position
+	
+func get_generation_position() -> Vector2:
+	print(generationPositionNode.global_position)
+	return generationPositionNode.global_position + get_parent().global_position

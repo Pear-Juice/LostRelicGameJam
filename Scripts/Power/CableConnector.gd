@@ -1,35 +1,49 @@
 extends Node
 
+signal give_power
+signal take_power
+
 var connected: bool
-onready var player = get_node("/root/PlayerVariables") as KinematicBody2D
+onready var player = $"/root/PlayerVariables" as KinematicBody2D
+onready var connectionPositionNode = $"Connection Position"
 var powerline: Line2D
 var connectedPowerline: Line2D
+var electrified: bool
 
 onready var animatedSprite: AnimatedSprite = find_node("AnimatedSprite")
 
 func _process(delta):
 	
-	if connected:
-		animatedSprite.frame = 1
+	if connected && connectedPowerline.electrified:
+		set_powered()
 	else:
-		animatedSprite.frame = 0
+		set_unpowered()
 
-	if powerline && !powerline.generator.isGenerating:
+	if powerline && !powerline.isGenerating:
 		disconnect_line()
 		
-	#print(str(player.powerline) + "   " + str(powerline) + "  " + str(connectedPowerline))
+func set_powered():
+	if !electrified:
+		electrified = true
+		animatedSprite.frame = 1
+		emit_signal("give_power")
 		
+func set_unpowered():
+	if electrified:
+		electrified = false
+		animatedSprite.frame = 0
+		emit_signal("take_power")
+	
 func _on_interact():
 	powerline = player.powerline
-	check_on_off()
+	check_connected()
 	
-func check_on_off():
+func check_connected():
 	if powerline:
 		if !connectedPowerline:
 			connect_line()
 		else:
 			connectedPowerline.stop_generation()
-			connectedPowerline.generator.isGenerating = false
 			connectedPowerline = null
 			connect_line()
 	else:
@@ -38,7 +52,7 @@ func check_on_off():
 	
 func connect_line():
 	connected = true
-	powerline.attachmentNode = self
+	powerline.attachmentNode = connectionPositionNode
 	connectedPowerline = powerline
 	
 	player.powerline = null

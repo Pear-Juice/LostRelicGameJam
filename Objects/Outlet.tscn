@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Power/Powerline.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Interactor.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Power/Outlet.gd" type="Script" id=3]
+[ext_resource path="res://Art/Outlet/outlet.png" type="Texture" id=4]
+
+[node name="Outlet" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Interactor" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Powerline" type="Line2D" parent="."]
+width = 6.0
+default_color = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
+generationPoitionNodePath = NodePath("Generation Position")
+distanceToDelete = 20.0
+
+[node name="Generation Position" type="Node2D" parent="Powerline"]
+position = Vector2( 0, 32 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+
+[connection signal="interact" from="Interactor" to="Powerline" method="_on_interact"]

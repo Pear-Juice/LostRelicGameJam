@@ -16,6 +16,9 @@ animations = [ {
 [node name="Cable Connector" type="Node2D"]
 script = ExtResource( 4 )
 
+[node name="Connection Position" type="Node2D" parent="."]
+position = Vector2( 0, 32 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
