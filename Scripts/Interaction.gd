@@ -13,7 +13,7 @@ func _process(delta):
 		interactor.interactable = false
 		var distance = interactor.global_position.distance_to(owner.global_position)
 		
-		#if plaer is close enough, add to reachable interactor lists
+		#if player is close enough, add to reachable interactor lists
 		if distance < interactionDistance:
 			reachableInteractors.append(interactor)
 			reachableInteractorDistances.append(distance)
