@@ -23,7 +23,7 @@ tracks/0/keys = {
 
 [node name="Hermit" type="KinematicBody2D" groups=["Enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, 5 )
 scale = Vector2( 0.3, 0.8 )
@@ -41,3 +41,13 @@ animation = "idle-d"
 "anims/Death 1" = SubResource( 2 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="AnimationPlayer"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2( 0, 5 )
+scale = Vector2( 0.3, 0.8 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="Movement" method="_on_Area2D_body_entered"]

@@ -8,8 +8,15 @@ onready var animationPlayer = node.get_node("AnimationPlayer") as AnimationPlaye
 var powerline: Line2D
 var spawnPoint: Vector2
 
-func _process(delta: float) -> void:
+export (int) var health = 4
+
+func _process(_delta: float) -> void:
 	node.powerline = powerline
+
+func receive_damage(dmg):
+	health -= dmg
+	if (health <= 0):
+		die()
 
 func die():
 	animationPlayer.play("Death 1")

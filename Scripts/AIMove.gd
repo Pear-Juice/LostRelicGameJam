@@ -13,7 +13,11 @@ func _ready():
 func _physics_process(_delta):
 	var direction = (_player.global_position - global_position).normalized()
 	_kinematicBody.move_and_slide(direction * speed)
-	print_debug(direction)
 
 func get_nav_path():
 	pass
+
+func _on_Area2D_body_entered(body: KinematicBody2D):
+	if (body.has_method("receive_damage")):
+		body.call("receive_damage", 1)
+	print_debug("damage")
