@@ -9,6 +9,7 @@
 script = ExtResource( 3 )
 
 [node name="Interactor" type="Node2D" parent="."]
+position = Vector2( 0, 32 )
 script = ExtResource( 2 )
 
 [node name="Powerline" type="Line2D" parent="."]

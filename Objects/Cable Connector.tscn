@@ -25,6 +25,7 @@ frames = SubResource( 1 )
 animation = "on_off"
 
 [node name="Interactor" type="Node2D" parent="."]
+position = Vector2( 0, 32 )
 script = ExtResource( 1 )
 
 [connection signal="interact" from="Interactor" to="." method="_on_interact"]
