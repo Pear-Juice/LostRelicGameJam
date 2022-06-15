@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileSet.tres" type="TileSet" id=3]
+
+[node name="Node2D2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 544, 288 )
+scale = Vector2( 3, 3 )
+z_index = 2
+
+[node name="Floor" type="TileMap" parent="."]
+position = Vector2( 448, 64 )
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+show_collision = true
+format = 1
+
+[node name="Top Layer" type="TileMap" parent="."]
+position = Vector2( 448, 64 )
+scale = Vector2( 4, 4 )
+z_index = 1
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+show_collision = true
+format = 1
