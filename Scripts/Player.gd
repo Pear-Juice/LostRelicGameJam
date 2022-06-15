@@ -6,16 +6,17 @@ onready var animationPlayer = node.get_node("AnimationPlayer") as AnimationPlaye
 
 #null if you arent holding
 var powerline: Line2D
-var spawnPoint: Vector2
+export var spawnPoint: Vector2
 
-export (int) var health = 4
+export (int) var baseHealth = 4
+var health = 4
 
 func _process(_delta: float) -> void:
 	node.powerline = powerline
 
 func receive_damage(dmg):
-	health -= dmg
-	if (health <= 0):
+	node.health -= dmg
+	if (node.health <= 0):
 		die()
 
 func die():
@@ -25,5 +26,7 @@ func die():
 		node.powerline.stop_generation()
 	
 	yield(get_tree().create_timer(0.5), "timeout")
-	node.global_position = spawnPoint
+	node.global_position = node.spawnPoint
+	
+	node.health = node.baseHealth
 
