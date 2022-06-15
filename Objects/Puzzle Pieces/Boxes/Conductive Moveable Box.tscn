@@ -9,8 +9,10 @@
 extents = Vector2( 32, 32 )
 
 [node name="Conductive Movable Box" type="KinematicBody2D"]
+rotation = -1.57079
 script = ExtResource( 4 )
 speed = 2
+connectorDirection = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -25,7 +27,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 
 [node name="Cable Connector" parent="." instance=ExtResource( 3 )]
-rotation = 1.57079
+rotation = 3.14159
 
 [connection signal="give_power" from="Cable Connector" to="." method="_on_give_power"]
 [connection signal="take_power" from="Cable Connector" to="." method="_on_take_power"]
