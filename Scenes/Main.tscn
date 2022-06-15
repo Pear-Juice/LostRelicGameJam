@@ -9,7 +9,7 @@
 [ext_resource path="res://Objects/Puzzle Pieces/Water.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Puzzle Pieces/Boxes/Conductive Moveable Box.tscn" type="PackedScene" id=8]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 544, 288 )

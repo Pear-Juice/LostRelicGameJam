@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/AIMove.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.8333, 2.65625 )
+extents = Vector2( 10, 3.75 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Death 1"
@@ -35,11 +35,13 @@ shape = SubResource( 1 )
 
 [node name="Movement" type="Node2D" parent="."]
 script = ExtResource( 2 )
+animatorPath = NodePath("../AnimatedSprite")
 speed = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle-d"
+playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Death 1" = SubResource( 2 )
