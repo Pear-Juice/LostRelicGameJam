@@ -27,17 +27,16 @@ func animate():
 			if (_animator.animation == a[0]):
 				_animator.animation = a[1]
 				
-	if (velocity.x != 0 && velocity.y != 0):
-		return
-	
-	elif (velocity.y < 0):
-		_animator.animation = "walk-u"
-	elif (velocity.y > 0):
-		_animator.animation = "walk-d"
-	elif (velocity.x > 0):
-		_animator.animation = "walk-r"
-	elif (velocity.x < 0):
-		_animator.animation = "walk-l"
+	if (abs(velocity.x) < abs(velocity.y)):
+		if (velocity.y < 0):
+			_animator.animation = "walk-u"
+		elif (velocity.y > 0):
+			_animator.animation = "walk-d"
+	else:
+		if (velocity.x > 0):
+			_animator.animation = "walk-r"
+		elif (velocity.x < 0):
+			_animator.animation = "walk-l"
 
 
 func get_nav_path():
