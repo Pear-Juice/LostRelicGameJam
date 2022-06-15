@@ -105,5 +105,4 @@ func get_attachment_position() -> Vector2:
 	return attachmentNode.global_position
 	
 func get_generation_position() -> Vector2:
-	print(generationPositionNode.global_position)
 	return generationPositionNode.global_position + get_parent().global_position

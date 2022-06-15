@@ -28,11 +28,15 @@ func set_powered():
 		animatedSprite.frame = 1
 		emit_signal("give_power")
 		
+		print("Powered on: " + str(self.name))
+		
 func set_unpowered():
 	if electrified:
 		electrified = false
 		animatedSprite.frame = 0
 		emit_signal("take_power")
+		
+		print("Powered off: " + str(self.name))
 	
 func _on_interact():
 	powerline = player.powerline

@@ -23,36 +23,38 @@ show_collision = true
 format = 1
 tile_data = PoolIntArray( 393218, 2, 0 )
 
-[node name="Cable Connector 1" parent="." instance=ExtResource( 3 )]
+[node name="Puzzle Pieces" type="Node2D" parent="."]
+
+[node name="Cable Connector 1" parent="Puzzle Pieces" instance=ExtResource( 3 )]
 position = Vector2( 480, 224 )
 rotation = -3.14159
 
-[node name="Cable Connector 2" parent="." instance=ExtResource( 3 )]
+[node name="Cable Connector 2" parent="Puzzle Pieces" instance=ExtResource( 3 )]
 position = Vector2( 736, 224 )
 rotation = -3.14159
 
-[node name="Cable Connector 3" parent="." instance=ExtResource( 3 )]
+[node name="Cable Connector 3" parent="Puzzle Pieces" instance=ExtResource( 3 )]
 position = Vector2( 736, 480 )
 rotation = -3.14159
 
-[node name="Generator 1" parent="." instance=ExtResource( 4 )]
+[node name="Generator 1" parent="Puzzle Pieces" instance=ExtResource( 4 )]
 position = Vector2( 480, 32 )
 
-[node name="Generator 2" parent="." instance=ExtResource( 4 )]
+[node name="Generator 2" parent="Puzzle Pieces" instance=ExtResource( 4 )]
 position = Vector2( 736, 32 )
 
-[node name="Outlet" parent="." instance=ExtResource( 5 )]
+[node name="Outlet" parent="Puzzle Pieces" instance=ExtResource( 5 )]
 position = Vector2( 736, 224 )
 
-[node name="Door" parent="." instance=ExtResource( 6 )]
+[node name="Door" parent="Puzzle Pieces" instance=ExtResource( 6 )]
 position = Vector2( 672, 480 )
 rotation = -3.14159
 
-[node name="Water" parent="." instance=ExtResource( 7 )]
+[node name="Water" parent="Puzzle Pieces" instance=ExtResource( 7 )]
 position = Vector2( 480, 416 )
 scale = Vector2( 4.84, 1 )
 
-[connection signal="give_power" from="Cable Connector 2" to="Outlet" method="_on_give_power"]
-[connection signal="take_power" from="Cable Connector 2" to="Outlet" method="_on_take_power"]
-[connection signal="give_power" from="Cable Connector 3" to="Door" method="_on_give_power"]
-[connection signal="take_power" from="Cable Connector 3" to="Door" method="_on_take_power"]
+[connection signal="give_power" from="Puzzle Pieces/Cable Connector 2" to="Puzzle Pieces/Outlet" method="_on_give_power"]
+[connection signal="take_power" from="Puzzle Pieces/Cable Connector 2" to="Puzzle Pieces/Outlet" method="_on_take_power"]
+[connection signal="give_power" from="Puzzle Pieces/Cable Connector 3" to="Puzzle Pieces/Door" method="_on_give_power"]
+[connection signal="take_power" from="Puzzle Pieces/Cable Connector 3" to="Puzzle Pieces/Door" method="_on_take_power"]
