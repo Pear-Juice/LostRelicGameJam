@@ -45,7 +45,7 @@ interactionDistance = 70.0
 [node name="Movement" type="Node2D" parent="."]
 script = ExtResource( 2 )
 animatorPath = NodePath("../AnimatedSprite")
-speed = 400
+speed = 350
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
