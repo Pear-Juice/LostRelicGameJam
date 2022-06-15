@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=70 format=2]
+[gd_resource type="TileSet" load_steps=71 format=2]
 
 [ext_resource path="res://Wilford.png" type="Texture" id=1]
 [ext_resource path="res://Art/PixelPackTOPDOWN8BIT.png" type="Texture" id=2]
@@ -137,7 +137,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 11.8831, 11.6538, 16, 0, 16 )
 points = PoolVector2Array( 16, 16, 4.40207, 16, 0, 11.8831, 0, 0, 16, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=59]
-points = PoolVector2Array( 9.96589, 14.8689, 4.91884, 14.8689, 4.91884, 10.0088, 9.96589, 10.0088 )
+points = PoolVector2Array( 9.96589, 14.8689, 4.88146, 14.9998, 4.91884, 10.0088, 9.96589, 10.0088 )
 
 [sub_resource type="ConvexPolygonShape2D" id=60]
 points = PoolVector2Array( 11.0875, 14.9447, 6.04041, 14.9447, 6.04041, 9.99109, 11.0875, 9.99109 )
@@ -201,6 +201,9 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 2.01517, 0, 1.92169, 9.03125, 6.
 
 [sub_resource type="ConvexPolygonShape2D" id=80]
 points = PoolVector2Array( 0, 13.9848, 9.08304, 13.9848, 14.1301, 9.12471, 14.1301, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=81]
+points = PoolVector2Array( 7.84198, 16, 0, 16, 0, 0, 7.84198, 0 )
 
 [resource]
 0/name = "Wilford.png 0"
@@ -647,6 +650,12 @@ points = PoolVector2Array( 0, 13.9848, 9.08304, 13.9848, 14.1301, 9.12471, 14.13
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 80 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 9, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 81 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
