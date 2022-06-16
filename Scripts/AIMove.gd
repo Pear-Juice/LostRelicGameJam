@@ -53,7 +53,7 @@ func _process(delta):
 	
 
 func _on_Area2D_body_entered(body: KinematicBody2D):
-	if body == get_parent():
+	if body != _player:
 		return
 	dmg_proc = true
 	attack()

@@ -8,6 +8,8 @@ export (int) var speed
 var velocity = Vector2()
 var ext_velocity = Vector2()
 
+var que_atk = false
+
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("up"):
@@ -18,10 +20,12 @@ func get_input():
 		velocity.x += 1
 	if Input.is_action_pressed("right"):
 		velocity.x -= 1
-	
 	velocity = velocity.normalized() * speed
+	
+	if Input.is_action_just_pressed("attack"):
+		attack()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	velocity += ext_velocity
 	ext_velocity *= 0.5
@@ -35,6 +39,7 @@ func animate():
 		for a in a_table:
 			if (_animator.animation == a[0]):
 				_animator.animation = a[1]
+				break
 				
 	if (velocity.x != 0 && velocity.y != 0):
 		return
@@ -47,3 +52,6 @@ func animate():
 		_animator.animation = "walk-r"
 	elif (velocity.x < 0):
 		_animator.animation = "walk-l"
+
+func attack():
+	pass
