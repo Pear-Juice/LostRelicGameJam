@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileSet.tres" type="TileSet" id=2]
-[ext_resource path="res://Objects/Cable Connector.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Generator.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Outlet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Power/Cable Connector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Power/Generator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Power/Outlet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Puzzle Pieces/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Puzzle Pieces/Water.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Puzzle Pieces/Boxes/Conductive Moveable Box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/SceneSwitcher.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Overworld.tscn" type="PackedScene" id=10]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -63,6 +65,9 @@ connectorDirection = 2
 position = Vector2( 325, 0 )
 rotation = 1.57079
 connectorDirection = 3
+
+[node name="SceneSwitcher" parent="Puzzle Pieces" instance=ExtResource( 9 )]
+scene = ExtResource( 10 )
 
 [connection signal="give_power" from="Puzzle Pieces/Cable Connector 2" to="Puzzle Pieces/Outlet" method="_on_give_power"]
 [connection signal="take_power" from="Puzzle Pieces/Cable Connector 2" to="Puzzle Pieces/Outlet" method="_on_take_power"]
