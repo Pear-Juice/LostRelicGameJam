@@ -17,6 +17,17 @@ func _on_give_power():
 	
 func _on_take_power():
 	move = false
+
+func _ready():
+	if (connector):
+			if connectorDirection == ConnectorDirection.Front:
+				connector.rotation_degrees = 0
+			elif connectorDirection == ConnectorDirection.Back:
+				connector.rotation_degrees = 180
+			elif connectorDirection == ConnectorDirection.Left:
+				connector.rotation_degrees = 90
+			elif connectorDirection == ConnectorDirection.Right:
+				connector.rotation_degrees = -90
 	
 func _process(delta: float) -> void:
 	if Engine.editor_hint:
