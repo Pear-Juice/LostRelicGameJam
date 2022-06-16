@@ -10,7 +10,7 @@
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 544, 288 )
 scale = Vector2( 3, 3 )
-z_index = 2
+z_index = 1
 
 [node name="Floor" type="TileMap" parent="."]
 position = Vector2( 448, 64 )
@@ -25,7 +25,7 @@ tile_data = PoolIntArray( -1376263, 2, 131078, -1376262, 2, 131078, -1376261, 2,
 [node name="Top Layer" type="TileMap" parent="."]
 position = Vector2( 448, 64 )
 scale = Vector2( 4, 4 )
-z_index = 1
+z_index = 2
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
