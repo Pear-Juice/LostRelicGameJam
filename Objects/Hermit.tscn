@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/AIMove.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 3.75 )
+extents = Vector2( 5.83333, 3.28125 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Death 1"
@@ -22,14 +22,13 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6, 8.25 )
+extents = Vector2( 2.5, 4 )
 
 [node name="Hermit" type="KinematicBody2D" groups=["Enemy"]]
 scale = Vector2( 4, 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 0, 5 )
+position = Vector2( 0, 5.375 )
 scale = Vector2( 0.3, 0.8 )
 shape = SubResource( 1 )
 
@@ -51,7 +50,8 @@ playing = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 1.75 )
+position = Vector2( 0, 4.75 )
 shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Area2D" to="Movement" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Movement" method="_on_Area2D_body_exited"]

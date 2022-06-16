@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 onready var node = get_tree().get_nodes_in_group("Player")[0] as KinematicBody2D
 onready var animationPlayer = node.get_node("AnimationPlayer") as AnimationPlayer
-
+onready var motor = node.get_node("Movement") as Node
 
 #null if you arent holding
 var powerline: Line2D
@@ -30,3 +30,5 @@ func die():
 	
 	node.health = node.baseHealth
 
+func add_force(force: Vector2):
+	motor.ext_velocity = force

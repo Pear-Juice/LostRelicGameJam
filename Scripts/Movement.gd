@@ -6,6 +6,7 @@ onready var _kinematicBody = get_parent() as KinematicBody2D
 export (int) var speed
 
 var velocity = Vector2()
+var ext_velocity = Vector2()
 
 func get_input():
 	velocity = Vector2()
@@ -22,6 +23,8 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	velocity += ext_velocity
+	ext_velocity *= 0.5
 	velocity = _kinematicBody.move_and_slide(velocity)
 	animate()
 

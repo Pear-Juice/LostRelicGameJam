@@ -26,7 +26,7 @@ func animate():
 		for a in a_table:
 			if (_animator.animation == a[0]):
 				_animator.animation = a[1]
-				
+	
 	if (abs(velocity.x) < abs(velocity.y)):
 		if (velocity.y < 0):
 			_animator.animation = "walk-u"
@@ -42,7 +42,28 @@ func animate():
 func get_nav_path():
 	pass
 
-func _on_Area2D_body_entered(body: KinematicBody2D):
-	if body != get_parent():
-		_player.receive_damage(1)
+
+var dmg_proc_delta = 0.0
+var dmg_proc = false
+func _process(delta):
+	if (dmg_proc_delta > 0):
+		dmg_proc_delta -= delta
+	if (dmg_proc):
+		attack()
 	
+
+func _on_Area2D_body_entered(body: KinematicBody2D):
+	if body == get_parent():
+		return
+	dmg_proc = true
+	attack()
+
+func _on_Area2D_body_exited(_body):
+	dmg_proc = false
+
+func attack():
+	if dmg_proc_delta > 0:
+		return
+	_player.add_force(velocity * 1500)
+	_player.receive_damage(1)
+	dmg_proc_delta = 0.5
