@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/Overworld.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Spawnpoint.tscn" type="PackedScene" id=11]
 
+
 [node name="Node2D2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
