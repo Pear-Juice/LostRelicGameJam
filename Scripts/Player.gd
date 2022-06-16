@@ -15,9 +15,10 @@ var spawnpoints : Array
 var spawnpointNames : Array
 
 func _ready() -> void:
-	node = get_tree().get_nodes_in_group("Player")[0] as KinematicBody2D
+	get_node("/root/PlayerVariables").node = get_tree().get_nodes_in_group("Player")[0] as KinematicBody2D
 	
-	if (self == node):
+	if (node == self):
+		yield(initSpawnpoints(), "completed")
 		node.spawn(currentSpawnPoint)
 
 func _process(_delta: float) -> void:
@@ -42,12 +43,16 @@ func die():
 func add_force(force: Vector2):
 	motor.ext_velocity = force
 	
+func initSpawnpoints():
+	get_tree().call_group("Spawnpoint", "initialize")
+	
 func spawn(pointName: String):
 	var pointPos : Vector2
+	print("spawn")
 	
 	for i in range(0, spawnpoints.size()):
 		if (spawnpointNames[i] == pointName):
 			pointPos = spawnpoints[i]
 			break
 	
-	node.global_position = pointPos
+	global_position = pointPos
