@@ -90,4 +90,3 @@ anims/EndSceneSwitch = SubResource( 4 )
 anims/StartSceneSwitch = SubResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="AnimationPlayer"]
-color = Color( 0, 0, 0, 1 )

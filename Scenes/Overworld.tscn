@@ -8,7 +8,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 544, 264 )
+position = Vector2( 568, -2072 )
 scale = Vector2( 3, 3 )
 z_index = 2
 

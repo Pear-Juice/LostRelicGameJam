@@ -13,6 +13,8 @@ var health = 4
 func _ready() -> void:
 	PlayerVariables.node = get_tree().get_nodes_in_group("Player")[0] as KinematicBody2D
 	PlayerVariables.animationPlayer = node.get_node("AnimationPlayer") as AnimationPlayer
+	animationPlayer.get_node("CanvasModulate").color = Color.black
+	
 	Spawn.spawn()
 
 func receive_damage(dmg):
