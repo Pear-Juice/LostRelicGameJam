@@ -4,7 +4,7 @@ export (NodePath) var animatorPath: NodePath
 onready var _animator = get_node(animatorPath) as AnimatedSprite
 
 onready var _kinematicBody = get_parent() as KinematicBody2D
-onready var _player = get_node("/root/PlayerVariables").node as KinematicBody2D
+onready var _player = PlayerVariables.node
 
 var velocity = Vector2()
 export (int) var speed = 100

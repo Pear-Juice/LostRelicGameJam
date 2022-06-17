@@ -1,7 +1,7 @@
 extends Node
 
 export var interactionDistance: float
-onready var player = get_node("/root/PlayerVariables") as KinematicBody2D
+onready var player = PlayerVariables
 
 func _process(delta):
 	var interactors : Array = get_tree().get_nodes_in_group("Interactors")

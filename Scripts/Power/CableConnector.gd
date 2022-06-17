@@ -4,7 +4,7 @@ signal give_power
 signal take_power
 
 var connected: bool
-onready var player = $"/root/PlayerVariables" as KinematicBody2D
+onready var player = PlayerVariables
 onready var connectionPositionNode = $"Connection Position"
 var powerline: Line2D
 var connectedPowerline: Line2D

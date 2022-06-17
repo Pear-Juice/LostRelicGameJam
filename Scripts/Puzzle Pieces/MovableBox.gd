@@ -3,7 +3,7 @@ tool
 extends KinematicBody2D
 
 onready var connector = get_node("Cable Connector") as Node2D
-onready var player = get_node("/root/PlayerVariables")
+onready var player = PlayerVariables
 
 export (int) var speed
 enum ConnectorDirection{Front, Back, Left, Right}

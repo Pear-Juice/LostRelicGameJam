@@ -1,5 +1,5 @@
 extends Line2D
-onready var player = get_node("/root/PlayerVariables")
+onready var player = PlayerVariables
 export var generationPoitionNodePath: NodePath
 onready var generationPositionNode = get_node(generationPoitionNodePath) as Node2D
 
