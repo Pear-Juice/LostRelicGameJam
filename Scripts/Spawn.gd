@@ -20,10 +20,13 @@ func initSpawnpoints():
 	
 func findSpawnPoint(pointName: String) -> Vector2:
 	var pos : Vector2
+	var foundPointName : String
 	
 	for i in range(0, spawnpoints.size()):
-		if (spawnpointNames[i] == pointName):
-			pos = spawnpoints[i]
+		if (spawnpoints[i][0] == pointName):
+			foundPointName = spawnpoints[i][0]
+			pos = spawnpoints[i][1]
 			break
 			
+	print("Teleport to: " + foundPointName + "  " + str(pos))
 	return pos

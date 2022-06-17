@@ -20,7 +20,6 @@ func _physics_process(_delta):
 
 	# animation
 func animate():
-	print(velocity)
 	var a_table = [["walk-l", "idle-l"], ["walk-r", "idle-r"], ["walk-u", "idle-u"], ["walk-d", "idle-d"]]
 	if (velocity == Vector2()):
 		for a in a_table:

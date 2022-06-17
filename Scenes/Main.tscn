@@ -69,7 +69,7 @@ connectorDirection = 3
 [node name="SceneSwitcher" parent="Puzzle Pieces" instance=ExtResource( 9 )]
 position = Vector2( -123, 0 )
 scene = "res://Scenes/Overworld.tscn"
-spawnPoint = "1"
+spawnPoint = "overworld_down"
 
 [node name="Spawnpoint" parent="Puzzle Pieces" instance=ExtResource( 11 )]
 position = Vector2( -129, 320 )
