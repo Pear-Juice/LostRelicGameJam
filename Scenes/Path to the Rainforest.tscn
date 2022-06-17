@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/SceneSwitcher.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TileSet.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/Overworld.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Spawnpoint.tscn" type="PackedScene" id=5]
 
 [node name="Node2D2" type="Node2D"]
@@ -37,9 +36,9 @@ tile_data = PoolIntArray( -4784187, 2, 11, -4784186, 2, 12, -4784185, 2, 11, -47
 [node name="SceneSwitcher" parent="." instance=ExtResource( 1 )]
 position = Vector2( 639, 265 )
 scale = Vector2( 4, 14.04 )
-scene = ExtResource( 4 )
+scene = "res://Scenes/Overworld.tscn"
 spawnPoint = "overworld_left"
 
 [node name="Spawnpoint" parent="." instance=ExtResource( 5 )]
 position = Vector2( 542, 266 )
-pointName = "Rainforest"
+pointName = "rainforest"
