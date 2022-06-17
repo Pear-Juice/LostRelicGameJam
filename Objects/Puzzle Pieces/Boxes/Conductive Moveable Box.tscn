@@ -15,6 +15,7 @@ speed = 2
 connectorDirection = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.93689, 0.93689 )
 shape = SubResource( 1 )
 
 [node name="Box Sprite" type="Sprite" parent="."]
