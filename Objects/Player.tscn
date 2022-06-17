@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Art/Player/player-sheet.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/Movement.gd" type="Script" id=2]
@@ -20,7 +20,38 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0.0352941, 0, 0.160784, 1 ), Color( 0.0352941, 0, 0.160784, 1 ), Color( 0, 0, 0, 1 ), Color( 0.0352941, 0, 0.160784, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0352941, 0, 0.160784, 1 ), Color( 0, 0, 0, 1 ), Color( 0.0352941, 0, 0.160784, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "EndSceneSwitch"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "EndSceneSwitch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
@@ -35,7 +66,6 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.7, 0.7 )
-smoothing_enabled = true
 
 [node name="Interaction" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -56,5 +86,8 @@ playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Death 1" = SubResource( 2 )
+anims/EndSceneSwitch = SubResource( 4 )
+anims/StartSceneSwitch = SubResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="AnimationPlayer"]
+color = Color( 0, 0, 0, 1 )

@@ -8,7 +8,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 544, 288 )
+position = Vector2( 544, 264 )
 scale = Vector2( 3, 3 )
 z_index = 2
 
@@ -55,7 +55,7 @@ scene = "res://Scenes/Path to the Rainforest.tscn"
 spawnPoint = "rainforest"
 
 [node name="Spawnpoint" parent="." instance=ExtResource( 1 )]
-position = Vector2( 543, 244 )
+position = Vector2( 544, 168 )
 pointName = "overworld_down"
 
 [node name="SceneSwitcher2" parent="." instance=ExtResource( 4 )]
@@ -71,5 +71,5 @@ pointName = "overworld_up"
 [node name="SceneSwitcher3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 928, -3854 )
 scale = Vector2( 17.8, 4 )
-scene = "res://Scenes/Overworld.tscn"
+scene = "res://Scenes/Path to Power Plant.tscn"
 spawnPoint = "path_to_power_plant"

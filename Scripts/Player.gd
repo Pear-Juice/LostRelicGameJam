@@ -12,6 +12,7 @@ var health = 4
 
 func _ready() -> void:
 	PlayerVariables.node = get_tree().get_nodes_in_group("Player")[0] as KinematicBody2D
+	PlayerVariables.animationPlayer = node.get_node("AnimationPlayer") as AnimationPlayer
 	Spawn.spawn()
 
 func receive_damage(dmg):
@@ -27,6 +28,7 @@ func die():
 	
 	yield(get_tree().create_timer(0.5), "timeout")
 	health = baseHealth
+	get_tree().reload_current_scene()
 
 func add_force(force: Vector2):
 	motor.ext_velocity = force

@@ -9,11 +9,16 @@ func _ready() -> void:
 	spawn()
 
 func spawn():
+	PlayerVariables.animationPlayer.play("EndSceneSwitch")
 	initSpawnpoints()
 	yield(get_tree().create_timer(.01), "timeout")
 	
 	var spawnPos = findSpawnPoint(currentSpawnPoint)
 	PlayerVariables.move_player(spawnPos)
+	
+	yield(get_tree().create_timer(.01), "timeout")
+	
+	PlayerVariables.node.get_node("Camera2D").smoothing_enabled = true
 
 func initSpawnpoints():
 	get_tree().call_group("Spawnpoint", "initialize")
