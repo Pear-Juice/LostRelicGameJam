@@ -63,11 +63,15 @@ connectorDirection = 2
 
 [node name="Conductive Movable Box2" parent="Puzzle Pieces" instance=ExtResource( 8 )]
 position = Vector2( 325, 0 )
+rotation = 3.14159
+
+[node name="Conductive Movable Box3" parent="Puzzle Pieces" instance=ExtResource( 8 )]
+position = Vector2( -66, -5 )
 rotation = 1.57079
 connectorDirection = 3
 
 [node name="SceneSwitcher" parent="Puzzle Pieces" instance=ExtResource( 9 )]
-position = Vector2( -123, 0 )
+position = Vector2( -129, 510 )
 scene = "res://Scenes/Overworld.tscn"
 spawnPoint = "overworld_down"
 
