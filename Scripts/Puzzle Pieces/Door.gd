@@ -5,6 +5,7 @@ onready var sprite = $AnimatedSprite as AnimatedSprite
 
 func _on_give_power():
 	collider.disabled = true
+	collider.disabled = true
 	sprite.frame = 1
 	
 
