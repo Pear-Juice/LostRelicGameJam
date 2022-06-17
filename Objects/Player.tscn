@@ -42,7 +42,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_editor_description_": ""
 }
-interactionDistance = 70.0
+interactionDistance = 30.0
 
 [node name="Movement" type="Node2D" parent="."]
 script = ExtResource( 2 )

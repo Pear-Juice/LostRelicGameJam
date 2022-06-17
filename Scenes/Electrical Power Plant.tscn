@@ -36,7 +36,7 @@ show_collision = true
 format = 1
 
 [node name="Conductive Movable Box" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1760, 288 )
+position = Vector2( 1613, 288 )
 rotation = -4.71238
 scale = Vector2( 0.97999, 0.97999 )
 z_index = 3
@@ -48,10 +48,10 @@ rotation = -4.71238
 scale = Vector2( 0.97999, 0.97999 )
 z_index = 3
 speed = 6
-connectorDirection = 0
+connectorDirection = 3
 
 [node name="Generator" parent="." instance=ExtResource( 4 )]
-position = Vector2( 412, 484 )
+position = Vector2( 672, 481 )
 
 [node name="Cable Connector" parent="." instance=ExtResource( 6 )]
 position = Vector2( -80, 36 )
@@ -70,3 +70,4 @@ rotation = -1.57079
 [connection signal="give_power" from="Cable Connector" to="Door" method="_on_give_power"]
 [connection signal="take_power" from="Cable Connector" to="Door" method="_on_take_power"]
 [connection signal="give_power" from="Cable Connector2" to="Outlet" method="_on_give_power"]
+[connection signal="take_power" from="Cable Connector2" to="Outlet" method="_on_take_power"]
