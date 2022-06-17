@@ -10,3 +10,4 @@ func _ready() -> void:
 func switch_scene(body):
 	if body == player.node:
 		get_tree().change_scene_to(scene)
+		player.currentSpawnPoint = spawnPoint

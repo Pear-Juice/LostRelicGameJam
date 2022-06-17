@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var node = get_tree().get_nodes_in_group("Player")[0] as KinematicBody2D
+onready var playerVariables = get_node("/root/PlayerVariables")
 onready var animationPlayer = node.get_node("AnimationPlayer") as AnimationPlayer
 onready var motor = node.get_node("Movement") as Node
 
@@ -18,12 +19,9 @@ func _ready() -> void:
 	get_node("/root/PlayerVariables").node = get_tree().get_nodes_in_group("Player")[0] as KinematicBody2D
 	
 	if (node == self):
-		yield(initSpawnpoints(), "completed")
+		initSpawnpoints()
+		yield(get_tree().create_timer(.1), "timeout")
 		node.spawn(currentSpawnPoint)
-
-func _process(_delta: float) -> void:
-	if node && powerline:
-		node.powerline = powerline
 
 func receive_damage(dmg):
 	node.health -= dmg
