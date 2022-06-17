@@ -9,4 +9,4 @@ func _ready() -> void:
 func switch_scene(body):
 	if body == PlayerVariables.node:
 		Spawn.currentSpawnPoint = spawnPoint
-		get_tree().change_scene_to(scene)
+		get_tree().change_scene(scene.resource_path)
