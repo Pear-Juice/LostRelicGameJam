@@ -69,3 +69,11 @@ func disconnect_line():
 		connectedPowerline.attachmentNode = player.node
 	connectedPowerline = null
 	
+
+
+func _on_give_power():
+	pass # Replace with function body.
+
+
+func _on_take_power():
+	pass # Replace with function body.
