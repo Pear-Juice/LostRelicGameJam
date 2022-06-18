@@ -5,10 +5,7 @@
 [ext_resource path="res://TileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://Objects/Power/Generator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/SceneSwitcher.tscn" type="PackedScene" id=5]
-<<<<<<< Updated upstream
 [ext_resource path="res://Objects/Puzzle Pieces/Spawnpoint.tscn" type="PackedScene" id=6]
-=======
-[ext_resource path="res://Objects/Spawnpoint.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Puzzle Pieces/Door.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -28,7 +25,6 @@ extents = Vector2( 8, 24 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 8, 56 )
->>>>>>> Stashed changes
 
 [node name="Node2D2" type="Node2D"]
 
