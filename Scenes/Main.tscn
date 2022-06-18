@@ -59,7 +59,6 @@ scale = Vector2( 4.84, 1 )
 
 [node name="Conductive Movable Box" parent="Puzzle Pieces" instance=ExtResource( 8 )]
 position = Vector2( 74, -6 )
-connectorDirection = 2
 
 [node name="Conductive Movable Box2" parent="Puzzle Pieces" instance=ExtResource( 8 )]
 position = Vector2( 325, 0 )

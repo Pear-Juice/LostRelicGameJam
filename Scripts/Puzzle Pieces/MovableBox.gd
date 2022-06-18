@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 func collide_move(dir: Vector2):
 	move_and_collide(dir)
 
+var hasJustMoved: bool
 var isMoving: bool
 func _physics_process(delta: float) -> void:
 	if not Engine.editor_hint:
@@ -59,10 +60,10 @@ func _physics_process(delta: float) -> void:
 		else:
 			if (isMoving):
 				dir = -Vector2(0,speed).rotated(rotation)
-				isMoving = false
+				isMoving = false	
+				hasJustMoved = true
 			else:
 				dir = Vector2(0,0)
-				
 		
 		var collision = move_and_collide(dir)
 		
@@ -70,10 +71,20 @@ func _physics_process(delta: float) -> void:
 			#if is player
 			if collision.collider.get_script() == player.node.get_script():
 				player.node.move_and_collide(dir)
+				
+				if !move && hasJustMoved:
+					print("AAA")
+					yield(get_tree().create_timer(.1), "timeout")
+					move_and_collide(-Vector2(0,speed).rotated(rotation))
+					
 				if check_stuck(collision.collider):
 					player.node.die()
 			if collision.collider.get_script() == self.get_script():
 				collision.collider.move_and_collide(dir)
+			
+			if !move && hasJustMoved:
+				move_and_collide(dir)	
+	hasJustMoved = false	
 			
 		
 		
