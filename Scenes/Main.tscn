@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileSet.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Objects/Puzzle Pieces/Water.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Puzzle Pieces/Boxes/Conductive Moveable Box.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/SceneSwitcher.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Power/Cable Blocker.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Puzzle Pieces/Spawnpoint.tscn" type="PackedScene" id=11]
 
 [node name="Node2D2" type="Node2D"]
@@ -77,6 +78,9 @@ spawnPoint = "overworld_down"
 [node name="Spawnpoint" parent="Puzzle Pieces" instance=ExtResource( 11 )]
 position = Vector2( -129, 320 )
 pointName = "Main"
+
+[node name="Cable Blocker" parent="Puzzle Pieces" instance=ExtResource( 10 )]
+position = Vector2( 325, 73 )
 
 [connection signal="give_power" from="Puzzle Pieces/Cable Connector 2" to="Puzzle Pieces/Outlet" method="_on_give_power"]
 [connection signal="take_power" from="Puzzle Pieces/Cable Connector 2" to="Puzzle Pieces/Outlet" method="_on_take_power"]

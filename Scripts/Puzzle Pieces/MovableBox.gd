@@ -86,9 +86,6 @@ func _physics_process(delta: float) -> void:
 					print("AAA")
 					yield(get_tree().create_timer(.1), "timeout")
 					move_and_collide(-Vector2(0,speed).rotated(rotation))
-					
-				if check_stuck(collision.collider):
-					player.node.die()
 			if collision.collider.get_script() == self.get_script():
 				collision.collider.move_and_collide(dir)
 			

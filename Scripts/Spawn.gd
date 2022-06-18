@@ -5,7 +5,7 @@ var spawnpoints : Array
 var spawnpointNames : Array
 
 func _ready() -> void:
-	currentSpawnPoint = "Main"
+	currentSpawnPoint = "power_plant"
 	spawn()
 
 func spawn():
