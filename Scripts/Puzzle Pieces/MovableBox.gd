@@ -9,18 +9,24 @@ export (int) var speed
 enum ConnectorDirection{Front, Back, Left, Right}
 export (ConnectorDirection) var connectorDirection
 
+onready var audioPlayer : AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 export var startNoise : AudioStream
+export var continueNoise : AudioStream
+export var endNoise : AudioStream
 
 
 var move: bool
 
 func _on_give_power():
 	move = true
-	
-	
+	audioPlayer.stream = startNoise
+	audioPlayer.play()
 	
 func _on_take_power():
 	move = false
+	audioPlayer.stream = endNoise
+	audioPlayer.play()
 
 func _ready():
 	if (connector):

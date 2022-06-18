@@ -8,7 +8,7 @@
 [ext_resource path="res://Objects/Power/Cable Connector.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Power/Outlet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/SceneSwitcher.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Objects/Spawnpoint.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Puzzle Pieces/Spawnpoint.tscn" type="PackedScene" id=9]
 
 [node name="Node2D2" type="Node2D"]
 
