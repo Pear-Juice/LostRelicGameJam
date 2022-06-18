@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Objects/Puzzle Pieces/Boxes/Conductive Moveable Box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Objects/Power/Outlet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/SceneSwitcher.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Puzzle Pieces/Spawnpoint.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Power/Cable Blocker.tscn" type="PackedScene" id=10]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -228,6 +229,9 @@ rotation = -1.57079
 [node name="Outlet7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1180, -608 )
 rotation = -4.71238
+
+[node name="Cable Blocker" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1154, 288 )
 
 [connection signal="give_power" from="Cable Connector" to="Door" method="_on_give_power"]
 [connection signal="give_power" from="Cable Connector" to="Door2" method="_on_give_power"]

@@ -83,14 +83,11 @@ func _physics_process(delta: float) -> void:
 				player.node.move_and_collide(dir)
 				
 				if !move && hasJustMoved:
-					print("AAA")
 					yield(get_tree().create_timer(.1), "timeout")
-					move_and_collide(-Vector2(0,speed).rotated(rotation))
+					move_and_collide(-Vector2(0,speed).rotated(rotation) / 4)
 			if collision.collider.get_script() == self.get_script():
 				collision.collider.move_and_collide(dir)
 			
-			if !move && hasJustMoved:
-				move_and_collide(dir)	
 	hasJustMoved = false	
 
 func check_stuck(node: KinematicBody2D) -> bool:
