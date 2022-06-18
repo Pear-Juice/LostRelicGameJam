@@ -10,6 +10,7 @@ extents = Vector2( 32, 32 )
 
 [node name="Conductive Movable Box" type="KinematicBody2D"]
 rotation = -1.57079
+z_index = 1
 script = ExtResource( 4 )
 speed = 2
 connectorDirection = 1
