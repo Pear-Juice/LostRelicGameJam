@@ -53,3 +53,13 @@ position = Vector2( 480, 328 )
 scale = Vector2( 16.72, 4 )
 scene = "res://Scenes/Overworld.tscn"
 spawnPoint = "overworld_up"
+
+[node name="Spawnpoint2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2336, -1904 )
+pointName = "path_to_power_plant_up"
+
+[node name="SceneSwitcher2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2334, -2037 )
+scale = Vector2( 33.5237, -5.03029 )
+scene = "res://Scenes/Electrical Power Plant.tscn"
+spawnPoint = "power_plant"
