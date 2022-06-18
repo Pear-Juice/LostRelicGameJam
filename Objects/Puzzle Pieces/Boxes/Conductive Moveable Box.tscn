@@ -9,7 +9,7 @@
 [ext_resource path="res://Audio/Box/ContinueBoxMove.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 34.3185, 34.3189 )
 
 [node name="Conductive Movable Box" type="KinematicBody2D"]
 rotation = -1.57079
@@ -22,7 +22,8 @@ continueNoise = ExtResource( 7 )
 endNoise = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 0.93689, 0.93689 )
+position = Vector2( 0.146659, -0.146664 )
+scale = Vector2( 0.899024, 0.899024 )
 shape = SubResource( 1 )
 
 [node name="Box Sprite" type="Sprite" parent="."]
