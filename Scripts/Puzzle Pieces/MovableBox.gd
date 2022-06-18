@@ -9,11 +9,15 @@ export (int) var speed
 enum ConnectorDirection{Front, Back, Left, Right}
 export (ConnectorDirection) var connectorDirection
 
+export var startNoise : AudioStream
+
 
 var move: bool
 
 func _on_give_power():
 	move = true
+	
+	
 	
 func _on_take_power():
 	move = false
@@ -85,18 +89,7 @@ func _physics_process(delta: float) -> void:
 			if !move && hasJustMoved:
 				move_and_collide(dir)	
 	hasJustMoved = false	
-			
-		
-		
-		
 
-		
-		#if collision:
-		#	if collision.collider.is_class("KinematicBody2D"):
-		#		collision.collider.move_and_collide(Vector2(0,speed).rotated(rotation))
-		#		if collision.collider.get_script() == player.node.get_script() && check_stuck(collision.collider):
-		#			player.node.die()
-					
 func check_stuck(node: KinematicBody2D) -> bool:
 	var pos = node.global_position
 	if node.test_move(node.transform, Vector2(0,0)):

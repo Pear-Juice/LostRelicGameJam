@@ -9,7 +9,7 @@
 [ext_resource path="res://Objects/Puzzle Pieces/Water.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Puzzle Pieces/Boxes/Conductive Moveable Box.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/SceneSwitcher.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objects/Spawnpoint.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/Puzzle Pieces/Spawnpoint.tscn" type="PackedScene" id=11]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -47,7 +47,7 @@ position = Vector2( 480, 32 )
 position = Vector2( -457, 131 )
 
 [node name="Outlet" parent="Puzzle Pieces" instance=ExtResource( 5 )]
-position = Vector2( 736, 224 )
+position = Vector2( 736, 256 )
 
 [node name="Door" parent="Puzzle Pieces" instance=ExtResource( 6 )]
 position = Vector2( 672, 480 )

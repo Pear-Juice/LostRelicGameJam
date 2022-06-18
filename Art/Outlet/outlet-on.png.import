@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/outlet-frame-2.png-e97b66257c255c6c120df0ee4d597b32.stex"
+path="res://.import/outlet-on.png-c949f83473c7b61262b1c3dbc70e5827.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Outlet/outlet-frame-2.png"
-dest_files=[ "res://.import/outlet-frame-2.png-e97b66257c255c6c120df0ee4d597b32.stex" ]
+source_file="res://Art/Outlet/outlet-on.png"
+dest_files=[ "res://.import/outlet-on.png-c949f83473c7b61262b1c3dbc70e5827.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
