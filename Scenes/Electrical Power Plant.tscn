@@ -23,6 +23,7 @@
 position = Vector2( 726, 457 )
 scale = Vector2( 3, 3 )
 z_index = 2
+spawnSound = null
 
 [node name="Floor" type="TileMap" parent="."]
 position = Vector2( 448, 64 )
