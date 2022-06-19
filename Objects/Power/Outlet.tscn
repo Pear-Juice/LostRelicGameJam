@@ -15,6 +15,7 @@ animations = [ {
 } ]
 
 [node name="Outlet" type="Node2D"]
+z_index = 1
 script = ExtResource( 3 )
 
 [node name="Interactor" type="Node2D" parent="."]
@@ -33,6 +34,7 @@ position = Vector2( 0, 32 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
+z_index = 1
 frames = SubResource( 1 )
 
 [connection signal="interact" from="Interactor" to="Powerline" method="_on_interact"]
