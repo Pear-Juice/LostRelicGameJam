@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Objects/Puzzle Pieces/Boxes/Conductive Moveable Box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Objects/Boombox.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Audio/Music/2.wav" type="AudioStream" id=13]
 [ext_resource path="res://Audio/Music/3.wav" type="AudioStream" id=14]
-[ext_resource path="res://Audio/Music/4.wav" type="AudioStream" id=15]
 
 [node name="Node2D3" type="Node2D"]
 
@@ -273,11 +272,11 @@ position = Vector2( -160, 62 )
 rotation = -1.57079
 
 [node name="Cable Blocker5" parent="." instance=ExtResource( 10 )]
-position = Vector2( -160, -190 )
+position = Vector2( -161, -190 )
 rotation = -1.57079
 
 [node name="Cable Blocker6" parent="." instance=ExtResource( 10 )]
-position = Vector2( -224, -190 )
+position = Vector2( -225, -190 )
 rotation = -1.57079
 
 [node name="Cable Blocker7" parent="." instance=ExtResource( 10 )]
@@ -331,10 +330,9 @@ rotation = -6.28318
 [node name="Boombox" parent="." instance=ExtResource( 12 )]
 position = Vector2( 864, 480 )
 on = true
-song1 = ExtResource( 15 )
+song1 = ExtResource( 13 )
 song2 = ExtResource( 11 )
 song3 = ExtResource( 14 )
-song4 = ExtResource( 13 )
 
 [connection signal="give_power" from="Cable Connector" to="Door" method="_on_give_power"]
 [connection signal="give_power" from="Cable Connector" to="Door2" method="_on_give_power"]
