@@ -37,6 +37,10 @@ func die():
 	if powerline:
 		powerline.stop_generation()
 	powerline = null
+	if PlayerVariables.powerline:
+		PlayerVariables.powerline.stop_generation()
+		PlayerVariables.powerline = null
+		
 	
 	yield(get_tree().create_timer(0.5), "timeout")
 	health = baseHealth
