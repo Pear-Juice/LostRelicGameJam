@@ -2,9 +2,12 @@ tool
 
 extends KinematicBody2D
 
+onready var connector = get_node("Cable Connector") as Node2D
 onready var player = PlayerVariables
 
 export (int) var speed
+enum ConnectorDirection{Front, Back, Left, Right}
+export (ConnectorDirection) var connectorDirection
 
 onready var audioPlayer : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -12,7 +15,11 @@ export var startNoise : AudioStream
 export var continueNoise : AudioStream
 export var endNoise : AudioStream
 
+
 var move: bool
+func custom_attach(node):
+	yield(get_tree().create_timer(.1), "timeout")
+	connector.custom_attach(node)
 
 func _on_give_power():
 	move = true
@@ -23,6 +30,32 @@ func _on_take_power():
 	move = false
 	audioPlayer.stream = endNoise
 	audioPlayer.play()
+
+func _ready():
+	if (connector):
+			if connectorDirection == ConnectorDirection.Front:
+				connector.rotation_degrees = 0
+			elif connectorDirection == ConnectorDirection.Back:
+				connector.rotation_degrees = 180
+			elif connectorDirection == ConnectorDirection.Left:
+				connector.rotation_degrees = 90
+			elif connectorDirection == ConnectorDirection.Right:
+				connector.rotation_degrees = -90
+	
+func _process(delta: float) -> void:
+	if Engine.editor_hint:
+		if (connector):
+			if connectorDirection == ConnectorDirection.Front:
+				connector.rotation_degrees = 0
+			elif connectorDirection == ConnectorDirection.Back:
+				connector.rotation_degrees = 180
+			elif connectorDirection == ConnectorDirection.Left:
+				connector.rotation_degrees = 90
+			elif connectorDirection == ConnectorDirection.Right:
+				connector.rotation_degrees = -90
+		
+		if connectorDirection == ConnectorDirection.Front:
+			pass
 
 func collide_move(dir: Vector2):
 	move_and_collide(dir)

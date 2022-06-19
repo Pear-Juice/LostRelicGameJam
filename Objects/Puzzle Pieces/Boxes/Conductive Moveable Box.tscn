@@ -3,7 +3,7 @@
 [ext_resource path="res://Art/Boxes/Conductive Box.png" type="Texture" id=1]
 [ext_resource path="res://Art/Boxes/Movement Arrow.png" type="Texture" id=2]
 [ext_resource path="res://Objects/Power/Cable Connector.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/Puzzle Pieces/MovableBox.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Puzzle Pieces/ConnectorMovableBox.gd" type="Script" id=4]
 [ext_resource path="res://Audio/Box/StartBoxMove.wav" type="AudioStream" id=5]
 [ext_resource path="res://Audio/Box/EndBoxMove.wav" type="AudioStream" id=6]
 [ext_resource path="res://Audio/Box/ContinueBoxMove.wav" type="AudioStream" id=7]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileSet.tres" type="TileSet" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Audio/Music/1.wav" type="AudioStream" id=13]
 [ext_resource path="res://Audio/Music/2.wav" type="AudioStream" id=14]
 [ext_resource path="res://Audio/Music/3.wav" type="AudioStream" id=15]
+[ext_resource path="res://Objects/Puzzle Pieces/Boxes/Moveable Box.tscn" type="PackedScene" id=16]
 
 [node name="Node2D3" type="Node2D"]
 
@@ -96,6 +97,11 @@ pointName = "Main"
 [node name="Cable Blocker" parent="Puzzle Pieces" instance=ExtResource( 10 )]
 position = Vector2( 183, 77 )
 
+[node name="Movable Box" parent="Puzzle Pieces" instance=ExtResource( 16 )]
+speed = 4
+
+[connection signal="give_power" from="Puzzle Pieces/Cable Connector 1" to="Puzzle Pieces/Movable Box" method="_on_give_power"]
+[connection signal="take_power" from="Puzzle Pieces/Cable Connector 1" to="Puzzle Pieces/Movable Box" method="_on_take_power"]
 [connection signal="give_power" from="Puzzle Pieces/Cable Connector 2" to="Puzzle Pieces/Outlet" method="_on_give_power"]
 [connection signal="take_power" from="Puzzle Pieces/Cable Connector 2" to="Puzzle Pieces/Outlet" method="_on_take_power"]
 [connection signal="give_power" from="Puzzle Pieces/Cable Connector 3" to="Puzzle Pieces/Door" method="_on_give_power"]
