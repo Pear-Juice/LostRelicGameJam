@@ -18,11 +18,9 @@ func _ready() -> void:
 	PlayerVariables.node = get_tree().get_nodes_in_group("Player")[0] as KinematicBody2D
 	PlayerVariables.animationPlayer = node.get_node("AnimationPlayer") as AnimationPlayer
 	animationPlayer.get_node("CanvasModulate").color = Color.black
-	audioSource = node.get_node("AudioStreamPlayer2D") as AudioStreamPlayer2D
+	node.audioSource = node.get_node("AudioStreamPlayer2D") as AudioStreamPlayer2D
 	
 	Spawn.spawn()
-	audioSource.stream = spawnSound
-	audioSource.play()
 
 func receive_damage(dmg):
 	node.health -= dmg
@@ -30,8 +28,9 @@ func receive_damage(dmg):
 		die()
 
 func die():
-	audioSource.stream = deathSound
-	audioSource.play()
+	print(str(node.deathSound) + "  " + str(node.audioSource))
+	node.audioSource.stream = node.deathSound
+	node.audioSource.play()
 	animationPlayer.play("Death 1")
 	
 	if powerline:

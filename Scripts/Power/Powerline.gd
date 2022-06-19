@@ -14,6 +14,12 @@ var attachedToPlayer: bool
 var isGenerating: bool
 var electrified: bool
 
+onready var audioPlayer = $AudioStreamPlayer as AudioStreamPlayer
+
+export var unplugSound: AudioStream
+export var plugSound: AudioStream
+
+
 func _ready():
 	set_as_toplevel(true)
 	self.visible = false
@@ -26,6 +32,7 @@ func set_default_attachment_node(node):
 func _on_interact():
 	if !isGenerating && player.powerline == null:
 		isGenerating = true
+		print("IIIIIIII")
 
 		start_generation(player.node)
 	elif isGenerating:
@@ -36,6 +43,9 @@ func _process(_delta):
 	update_generation()
 
 func start_generation(attachNode):
+	audioPlayer.stream = unplugSound
+	audioPlayer.play()
+	
 	delete_point_recursive(0)
 	attachmentNode = attachNode
 	isGenerating = true
@@ -45,6 +55,9 @@ func start_generation(attachNode):
 	self.visible = true
 
 func stop_generation():
+	audioPlayer.stream = unplugSound
+	audioPlayer.stop()
+	
 	self.visible = false
 	delete_point_recursive(0)
 	attachmentNode = null

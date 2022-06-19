@@ -82,6 +82,7 @@ interactionDistance = 30.0
 [node name="Movement" type="Node2D" parent="."]
 script = ExtResource( 2 )
 animatorPath = NodePath("../AnimatedSprite")
+audioPlayerPath = NodePath("../AudioStreamPlayer2D")
 stepSounds = ExtResource( 5 )
 speed = 350
 
@@ -99,4 +100,3 @@ anims/StartSceneSwitch = SubResource( 3 )
 position = Vector2( 0, 5 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-volume_db = -13.611

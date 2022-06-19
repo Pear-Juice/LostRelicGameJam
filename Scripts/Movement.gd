@@ -2,7 +2,8 @@ extends Node2D
 export (NodePath) var animatorPath: NodePath
 onready var _animator = get_node(animatorPath) as AnimatedSprite
 onready var _kinematicBody = get_parent() as KinematicBody2D
-onready var audioPlayer = get_node("../AudioStreamPlayer2D") as AudioStreamPlayer2D
+export (NodePath) var audioPlayerPath
+onready var audioPlayer = get_node(audioPlayerPath) as AudioStreamPlayer2D
 
 export var stepSounds : AudioStream
 
@@ -40,8 +41,10 @@ func _physics_process(_delta):
 	
 	if velocity != Vector2(0,0):
 		if !playStepSound:
+			audioPlayer.stream = stepSounds
 			audioPlayer.play()
 			playStepSound = true
+			print("play step")
 	else:
 		audioPlayer.stop()
 		playStepSound = false

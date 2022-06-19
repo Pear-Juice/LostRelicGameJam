@@ -193,10 +193,10 @@ position = Vector2( 1380, 96 )
 rotation = -1.57079
 
 [node name="Cable Connector3" parent="." instance=ExtResource( 6 )]
-position = Vector2( -352, 36 )
+position = Vector2( -288, 40 )
 
 [node name="Outlet2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -352, -164 )
+position = Vector2( -288, -160 )
 rotation = -3.14159
 
 [node name="Cable Connector11" parent="." instance=ExtResource( 6 )]
@@ -215,11 +215,11 @@ position = Vector2( -36, 416 )
 rotation = -4.71238
 
 [node name="Cable Connector7" parent="." instance=ExtResource( 6 )]
-position = Vector2( -288, -164 )
+position = Vector2( -352, -160 )
 rotation = 3.14159
 
 [node name="Outlet5" parent="." instance=ExtResource( 7 )]
-position = Vector2( -288, 36 )
+position = Vector2( -352, 40 )
 
 [node name="Cable Connector4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 28, -222 )
@@ -248,19 +248,19 @@ openSpecialSound = ExtResource( 16 )
 position = Vector2( 736, -672 )
 
 [node name="Cable Connector6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1180, -544 )
+position = Vector2( 1184, -608 )
 rotation = 1.57079
 
 [node name="Outlet4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1380, -544 )
+position = Vector2( 1376, -608 )
 rotation = -1.57079
 
 [node name="Cable Connector9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1380, -608 )
+position = Vector2( 1376, -544 )
 rotation = -1.57079
 
 [node name="Outlet7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1180, -608 )
+position = Vector2( 1184, -544 )
 rotation = -4.71238
 
 [node name="Cable Blocker" parent="." instance=ExtResource( 10 )]
