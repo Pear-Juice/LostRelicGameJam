@@ -3,17 +3,19 @@
 [ext_resource path="res://Scripts/Puzzle Pieces/Water.gd" type="Script" id=1]
 [ext_resource path="res://Art/PixelPackTOPDOWN8BIT.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 48.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 46.3438, 46.9448 )
 
 [node name="Water" type="Area2D"]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 0.690492, 0.681651 )
+position = Vector2( -9.53674e-07, 9.53674e-07 )
+scale = Vector2( 0.689414, 0.680209 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 region_enabled = true
