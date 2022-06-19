@@ -2,6 +2,9 @@ extends Node2D
 export (NodePath) var animatorPath: NodePath
 onready var _animator = get_node(animatorPath) as AnimatedSprite
 onready var _kinematicBody = get_parent() as KinematicBody2D
+onready var audioPlayer = PlayerVariables.node.get_node("AudioStreamPlayer2D") as AudioStreamPlayer2D
+
+export var stepSounds : AudioStream
 
 export (int) var speed
 
@@ -9,6 +12,9 @@ var velocity = Vector2()
 var ext_velocity = Vector2()
 
 var que_atk = false
+
+func _ready() -> void:
+	audioPlayer.stream = stepSounds
 
 func get_input():
 	velocity = Vector2()
@@ -25,10 +31,21 @@ func get_input():
 	if Input.is_action_just_pressed("attack"):
 		attack()
 
+var playStepSound : bool = false
+
 func _physics_process(_delta):
 	get_input()
 	velocity += ext_velocity
 	ext_velocity *= 0.5
+	
+	if velocity != Vector2(0,0):
+		if !playStepSound:
+			audioPlayer.play()
+			playStepSound = true
+	else:
+		audioPlayer.stop()
+		playStepSound = false
+		
 	velocity = _kinematicBody.move_and_slide(velocity)
 	animate()
 
