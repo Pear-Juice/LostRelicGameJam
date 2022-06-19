@@ -7,6 +7,10 @@ var spawnpointNames : Array
 func _ready() -> void:
 	currentSpawnPoint = "power_plant"
 	spawn()
+	
+func _process(delta: float) -> void:
+	if (Input.is_action_just_pressed("reset")):
+		PlayerVariables.node.die()
 
 func spawn():
 	PlayerVariables.animationPlayer.play("EndSceneSwitch")

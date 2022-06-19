@@ -6,7 +6,7 @@ onready var player = PlayerVariables
 
 export (int) var speed
 
-onready var audioPlayer : AudioStreamPlayer2D = $AudioStreamPlayer2D
+onready var audioPlayer : AudioStreamPlayer = $AudioStreamPlayer
 
 export var startNoise : AudioStream
 export var continueNoise : AudioStream

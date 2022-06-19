@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Objects/Puzzle Pieces/Boxes/Conductive Moveable Box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -15,8 +15,9 @@
 [ext_resource path="res://Audio/Music/2.wav" type="AudioStream" id=13]
 [ext_resource path="res://Audio/Music/3.wav" type="AudioStream" id=14]
 [ext_resource path="res://Audio/Music/4.wav" type="AudioStream" id=15]
+[ext_resource path="res://Audio/Finish.wav" type="AudioStream" id=16]
 
-[node name="Node2D3" type="Node2D"]
+[node name="Node2D4" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 726, 457 )
@@ -229,6 +230,7 @@ position = Vector2( -608, -668 )
 
 [node name="Door3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 672, -672 )
+openSpecialSound = ExtResource( 16 )
 
 [node name="Door4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 736, -672 )

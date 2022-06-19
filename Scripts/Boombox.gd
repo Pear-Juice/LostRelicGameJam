@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var audioPlayer = get_node("AudioStreamPlayer2D") as AudioStreamPlayer2D
+onready var audioPlayer = get_node("AudioStreamPlayer") as AudioStreamPlayer
 
 export var on : bool
 export var song1 : AudioStream
