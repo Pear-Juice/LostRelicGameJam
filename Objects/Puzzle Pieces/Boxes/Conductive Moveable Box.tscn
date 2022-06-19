@@ -9,7 +9,7 @@
 [ext_resource path="res://Audio/Box/ContinueBoxMove.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 34.3185, 34.3189 )
+extents = Vector2( 35.5941, 35.5941 )
 
 [node name="Conductive Movable Box" type="KinematicBody2D"]
 rotation = -1.57079
