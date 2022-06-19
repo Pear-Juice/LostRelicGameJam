@@ -17,10 +17,16 @@ var electrified: bool
 func _ready():
 	set_as_toplevel(true)
 	self.visible = false
-	
+
+func set_default_attachment_node(node):
+	stop_generation()
+	start_generation(node)
+	attachmentNode.custom_attach(self)
+		
 func _on_interact():
 	if !isGenerating && player.powerline == null:
 		isGenerating = true
+
 		start_generation(player.node)
 	elif isGenerating:
 		isGenerating = false

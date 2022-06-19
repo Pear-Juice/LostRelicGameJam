@@ -17,6 +17,9 @@ export var endNoise : AudioStream
 
 
 var move: bool
+func custom_attach(node):
+	yield(get_tree().create_timer(.1), "timeout")
+	connector.custom_attach(node)
 
 func _on_give_power():
 	move = true

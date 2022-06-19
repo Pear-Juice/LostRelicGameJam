@@ -42,6 +42,10 @@ func _on_interact():
 	powerline = player.powerline
 	check_connected()
 	
+func custom_attach(node):
+	powerline = node
+	check_connected()
+	
 func check_connected():
 	if powerline:
 		if !connectedPowerline:

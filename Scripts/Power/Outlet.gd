@@ -1,7 +1,12 @@
 extends Node2D
 
+export var defaultAttachmentNodePath : NodePath
 onready var powerline = $Powerline as Node2D
 onready var animatedSprite = $AnimatedSprite as AnimatedSprite
+
+func _ready() -> void:
+	if defaultAttachmentNodePath:
+		powerline.set_default_attachment_node(get_node(defaultAttachmentNodePath))
 
 func _on_give_power():
 	powerline.electrified = true
