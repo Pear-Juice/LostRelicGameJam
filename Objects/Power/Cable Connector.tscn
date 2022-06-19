@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Interactor.gd" type="Script" id=1]
 [ext_resource path="res://Art/Cable Connector/pixil-frame-1.png" type="Texture" id=2]
 [ext_resource path="res://Art/Cable Connector/pixil-frame-0.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Power/CableConnector.gd" type="Script" id=4]
+[ext_resource path="res://Audio/Power/plug-in.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/Power/unplug.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,6 +18,8 @@ animations = [ {
 [node name="Cable Connector" type="Node2D"]
 z_index = 1
 script = ExtResource( 4 )
+plugSound = ExtResource( 5 )
+unplugSound = ExtResource( 6 )
 
 [node name="Connection Position" type="Node2D" parent="."]
 position = Vector2( 0, 32 )
@@ -28,5 +32,7 @@ animation = "on_off"
 [node name="Interactor" type="Node2D" parent="."]
 position = Vector2( 0, 32 )
 script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="interact" from="Interactor" to="." method="_on_interact"]

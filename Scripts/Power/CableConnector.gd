@@ -6,9 +6,13 @@ signal take_power
 var connected: bool
 onready var player = PlayerVariables
 onready var connectionPositionNode = $"Connection Position"
+onready var audioPlayer = $AudioStreamPlayer as AudioStreamPlayer
 var powerline: Line2D
 var connectedPowerline: Line2D
 var electrified: bool
+
+export var plugSound: AudioStream
+export var unplugSound: AudioStream
 
 onready var animatedSprite: AnimatedSprite = find_node("AnimatedSprite")
 
@@ -26,6 +30,10 @@ func set_powered():
 	if !electrified:
 		electrified = true
 		animatedSprite.frame = 1
+		
+		audioPlayer.stream = plugSound
+		audioPlayer.play()
+		
 		emit_signal("give_power")
 		
 		print("Powered on: " + str(self.name))
@@ -34,6 +42,10 @@ func set_unpowered():
 	if electrified:
 		electrified = false
 		animatedSprite.frame = 0
+		
+		audioPlayer.stream = unplugSound
+		audioPlayer.play()
+		
 		emit_signal("take_power")
 		
 		print("Powered off: " + str(self.name))

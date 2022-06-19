@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/unplug.wav-82814b70e4a53e689c00e300195db09c.sample"
+
+[deps]
+
+source_file="res://Audio/Power/unplug.wav"
+dest_files=[ "res://.import/unplug.wav-82814b70e4a53e689c00e300195db09c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
