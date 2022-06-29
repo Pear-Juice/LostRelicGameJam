@@ -25,11 +25,11 @@ func _ready() -> void:
 	if song5:
 		songs.append(song5)
 	
-	
-	if songs[0]:
-		audioPlayer.stream = songs[0]
-	if on:
-		audioPlayer.play()
+	if (songs.size() > 0):
+		if songs[0]:
+			audioPlayer.stream = songs[0]
+		if on:
+			audioPlayer.play()
 
 func _on_finished():
 	song += 1

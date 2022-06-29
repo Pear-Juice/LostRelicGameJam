@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Puzzle Pieces/Spawnpoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Boombox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Audio/Music/2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/Music/5.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/Music/3.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/Music/4.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/Music/1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/Finish.wav" type="AudioStream" id=9]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -5194.0
+margin_top = -3016.0
+margin_right = 4431.0
+margin_bottom = 3276.0
+theme = SubResource( 1 )
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+margin_left = 5487.0
+margin_top = 4379.0
+margin_right = 5999.0
+margin_bottom = 4571.0
+text = "Congradulations!
+You survived the puzzles!
+You saved the city!
+
+
+
+
+
+
+
+
+The city?
+
+There was an explosion at the citie's only power plant that caused hundreds of houses to lose power.
+
+Miraculously, or not so, you were the only availible electrician.
+Obviously this was not a problem for you though.
+
+Context sure is great isn't it.
+
+Hope you enjoyed!
+- FlickrAV, PearJuice, hypercat
+"
+smooth_scrolling = true
+wrap_enabled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 5609.0
+margin_top = 3251.0
+margin_right = 5817.0
+margin_bottom = 3323.0
+rect_scale = Vector2( 0.914893, 0.78327 )
+custom_colors/default_color = Color( 1, 0.796078, 0, 1 )
+text = "You did it!"
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 296 )
+scale = Vector2( 4, 4 )
+
+[node name="Spawnpoint" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, 303 )
+pointName = "end"
+
+[node name="Boombox" parent="." instance=ExtResource( 3 )]
+position = Vector2( 288, 304 )
+on = true
+song1 = ExtResource( 7 )
+song2 = ExtResource( 5 )
+song3 = ExtResource( 6 )
+song4 = ExtResource( 8 )
+song5 = ExtResource( 4 )
+
+[node name="Boombox2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 544 )
+on = true
+
+[node name="Boombox4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 736, 304 )
+on = true
+
+[node name="Boombox5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 672, 168 )
+on = true
+
+[node name="Boombox6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 672, 464 )
+on = true
+
+[node name="Boombox7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 352, 456 )
+on = true
+
+[node name="Boombox8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 352, 168 )
+on = true
+
+[node name="Boombox3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 96 )
+on = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true

@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="LostRelicGameJam"
-run/main_scene="res://Scenes/Electrical Power Plant.tscn"
+run/main_scene="res://Scenes/Tutorial.tscn"
 config/icon="res://icon.png"
 
 [autoload]

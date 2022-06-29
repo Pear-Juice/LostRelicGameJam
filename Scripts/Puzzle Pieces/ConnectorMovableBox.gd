@@ -16,7 +16,7 @@ export var continueNoise : AudioStream
 export var endNoise : AudioStream
 
 
-var move: bool
+var move: bool = false
 func custom_attach(node):
 	yield(get_tree().create_timer(.1), "timeout")
 	connector.custom_attach(node)
@@ -58,7 +58,8 @@ func _process(delta: float) -> void:
 			pass
 
 func collide_move(dir: Vector2):
-	move_and_collide(dir)
+	if !Engine.editor_hint:
+		move_and_collide(dir)
 
 var hasJustMoved: bool
 var isMoving: bool
